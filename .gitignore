@@ -1,0 +1,25 @@
+# build
+build/
+*.elf
+*.nds
+*.map
+*.o
+*.d
+
+# dados do jogo: NUNCA versionar (Konami)
+disks/
+extracted/
+*.bin
+*.cue
+*.iso
+*.img
+*.chd
+*.str
+*.xa
+*.vb
+*.vh
+
+# editores / SO
+.vscode/
+.DS_Store
+Thumbs.db
