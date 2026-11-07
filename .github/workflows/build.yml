@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  nds:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compilar
+        run: make
+
+      - name: Publicar o .nds
+        uses: actions/upload-artifact@v4
+        with:
+          name: sotn-dsi
+          path: sotn-dsi.nds
+          if-no-files-found: error
